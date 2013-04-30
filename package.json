@@ -3,10 +3,10 @@
     "version": "0.6.9",
     "description": "Async utilities for node and the browser. (amd support) ",
     "keywords": ["browser", "node", "async"],
-    "homepage": "https://github.com/shibucafe/bucks.js",
+    "homepage": "https://github.com/CyberAgent/bucks.js",
     "bugs": {
         "email": "shibucafe@cyberagent.co.jp",
-        "url": "https://github.com/shibucafe/bucks.js/issues"
+        "url": "https://github.com/CyberAgent/bucks.js/issues"
     },
     "author": {
         "name": "Kazuma Mishimagi",
@@ -20,7 +20,7 @@
     }],
     "repository": {
         "type": "git",
-        "url": "https://github.com/shibucafe/bucks.js.git"
+        "url": "https://github.com/CyberAgent/bucks.js.git"
     },
     "dependencies": {
         "uglify-js": "*"

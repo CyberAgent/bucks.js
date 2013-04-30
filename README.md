@@ -249,7 +249,7 @@ b.parallel([
 
 # Changelog
 
-@see https://github.com/shibucafe/bucks.js/wiki/Changelog
+@see https://github.com/CyberAgent/bucks.js/blob/master/Changelog
 
 
 # Copyright
@@ -259,4 +259,4 @@ CyberAgent, Inc. All rights reserved.
 
 # License
 
-MIT @see https://github.com/shibucafe/bucks.js/blob/master/LICENSE
+MIT @see https://github.com/CyberAgent/bucks.js/blob/master/LICENSE
