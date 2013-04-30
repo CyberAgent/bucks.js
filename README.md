@@ -112,7 +112,7 @@ b.then(function start() {
 }).then(function second(res, next) {
     // res => 'start'
     return next(null, 'second')
-})end();
+}).end();
 ```
 
 
