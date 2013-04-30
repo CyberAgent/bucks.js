@@ -1,0 +1,45 @@
+{
+    "name": "bucks",
+    "version": "0.6.9",
+    "description": "Async utilities for node and the browser. (amd support) ",
+    "keywords": ["browser", "node", "async"],
+    "homepage": "https://github.com/shibucafe/bucks.js",
+    "bugs": {
+        "email": "shibucafe@cyberagent.co.jp",
+        "url": "https://github.com/shibucafe/bucks.js/issues"
+    },
+    "author": {
+        "name": "Kazuma Mishimagi",
+        "email": "mishimagi_kazuma@cyberagnet.co.jp",
+        "url": "https://github.com/maginemu"
+    },
+    "contributors": [{
+        "name": "Kei Funagayama",
+        "email": "funagayama_kei@cyberagent.co.jp",
+        "url": "https://github.com/fkei"
+    }],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/shibucafe/bucks.js.git"
+    },
+    "dependencies": {
+        "uglify-js": "*"
+    },
+    "devDependencies": {
+        "ready.js": ">=2.0.1",
+        "mocha": ">=1.0.1",
+        "should": ">=0.6.1",
+        "jshint": ">=0.7.0",
+        "jsdoc": "git://github.com/jsdoc3/jsdoc.git"
+    },
+    "engines": {
+        "node": ">=0.8.0",
+        "npm": ">=1.1.0"
+    },
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "private": true,
+    "main": "./bucks.js"
+}
