@@ -40,6 +40,5 @@
         "darwin",
         "linux"
     ],
-    "private": true,
     "main": "./bucks.js"
 }
