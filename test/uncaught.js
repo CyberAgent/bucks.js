@@ -5,7 +5,6 @@
     var should = require('should');
 
 
-
     describe('uncaught error', function() {
         it('should throw error when error in task if no end callback exists', function() {
             var b = new Bucks();
@@ -111,7 +110,6 @@
         });
     });
 
-
     describe('uncaught error when DEBUG', function() {
         before(function() {
             Bucks.DEBUG = true;
@@ -125,7 +123,7 @@
                     throw new Error('err');
                 }).end();
             } catch(e) {
-                should.fail('should not be called this method!');
+                e.message.should.equal("err").be.ok;
             }
 
         });

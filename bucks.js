@@ -68,6 +68,13 @@
     };
 
     /**
+     * bucks.js version
+     * @memberof Bucks
+     * @static
+     */
+    Bucks.VERSION = '0.6.10';
+
+    /**
      * if set `true`, uncaught errors are logged
      * @memberof Bucks
      * @static
@@ -88,6 +95,26 @@
      */
     Bucks.living = {};
 
+    /**
+     * onErrorが設定されているか
+     * @memberof Bucks
+     * @static
+     */
+    Bucks._isOnError = false;
+
+    /**
+     * すべての例外をcatchする関数
+     * @memberof Bucks
+     * @static
+     */
+    Bucks.onError = function onError(onError) {
+        var self = this;
+        (function (isOnError) {
+            Bucks._onError = onError;
+            Bucks._isOnError = isOnError;
+        })(true);
+    };
+
     // prototype implementation
     Bucks.prototype = {
 
@@ -98,7 +125,6 @@
          * @memberof Bucks
          */
         initialize: none,
-
 
         /**
          * taskの引数をラップして共通化します。
@@ -229,7 +255,6 @@
             return this.then(function emptyTask() {});
         },
 
-
         /**
          * 前のタスクがエラーだった場合のみ呼ばれるタスクを追加します
          * @memberof Bucks
@@ -278,7 +303,6 @@
 
             try {
                 var self = this;
-
                 // handle task
                 task(err, res, function (err, res) {
                     self._iterator(err, res);
@@ -293,6 +317,9 @@
                     if (Bucks.DEBUG) {
                         // if DEBUG, logging
                         logError(exception);
+                    }
+                    if (Bucks._isOnError) {
+                        Bucks._onError(exception, this);
                     } else {
                         throw exception;
                     }
@@ -481,16 +508,28 @@
                 }
             } catch (ex) {
                 if (failure) {
-                    failure(ex);
+                    try {
+                        failure(ex);
+                    } catch (ex1) {
+                        if (Bucks._isOnError) {
+                            Bucks._onError(ex1, this);
+                        } else {
+                            throw ex1;
+                        }
+                    }
                 } else {
                     // if err and no failure callback
                     // throw it
                     if (Bucks.DEBUG) {
                         // if DEBUG, logging
                         logError(ex);
+                    }
+                    if (Bucks._isOnError) {
+                        Bucks._onError(ex, this);
                     } else {
                         throw ex;
                     }
+
                 }
             } finally {
                 delete this._alive;
@@ -511,7 +550,6 @@
          * @param {function errback(err)} [errback] callbackでエラーが発生した場合のハンドラ
          */
         end: function end(callback, errback) {
-
             if (callback && callback.length < 1) {
                 // if callback specified, it should be `callback(err, ress)`.
                 // errが無視されると発生したエラーがどこにも出ずにデバッグが難しくなるので

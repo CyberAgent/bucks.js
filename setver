@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+
+var list = [
+    './package.json'
+];
+
+var VERSION = require('./bucks').VERSION;
+
+for (var i = 0; i < list.length; i++) {
+    var file = list[i];
+    var data = JSON.parse(fs.readFileSync(file, 'utf-8'));
+    data.version = VERSION;
+    data = JSON.stringify(data, null, '    ');
+    fs.writeFileSync(file, data, 'utf-8');
+    console.log('set version:', VERSION, 'file:',file);
+}

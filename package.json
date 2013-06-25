@@ -1,8 +1,12 @@
 {
     "name": "bucks",
-    "version": "0.6.9",
+    "version": "0.6.10",
     "description": "Async utilities for node and the browser. (amd support) ",
-    "keywords": ["browser", "node", "async"],
+    "keywords": [
+        "browser",
+        "node",
+        "async"
+    ],
     "homepage": "https://github.com/CyberAgent/bucks.js",
     "bugs": {
         "email": "shibucafe@cyberagent.co.jp",
@@ -13,11 +17,13 @@
         "email": "mishimagi_kazuma@cyberagnet.co.jp",
         "url": "https://github.com/maginemu"
     },
-    "contributors": [{
-        "name": "Kei Funagayama",
-        "email": "funagayama_kei@cyberagent.co.jp",
-        "url": "https://github.com/fkei"
-    }],
+    "contributors": [
+        {
+            "name": "Kei Funagayama",
+            "email": "funagayama_kei@cyberagent.co.jp",
+            "url": "https://github.com/fkei"
+        }
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/CyberAgent/bucks.js.git"

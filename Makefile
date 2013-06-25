@@ -15,7 +15,7 @@ check:
 test: check
 	@echo
 	@echo "info: testing start."
-	./node_modules/mocha/bin/mocha --reporter spec test/
+	./node_modules/mocha/bin/mocha --reporter spec test/*.js
 
 build:
 	@echo

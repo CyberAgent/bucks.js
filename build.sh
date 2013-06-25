@@ -24,8 +24,7 @@ __min="${__script_dir}/bucks.min.js"
 echo
 echo "info: jshint start."
 ${__hint} ${__src}
-# TODO: skip
-#[ $? -ne 0 ] && echo "jshint running error." && exit 1
+[ $? -ne 0 ] && echo "jshint running error." && exit 1
 
 #
 # jsdoc3
@@ -33,10 +32,10 @@ ${__hint} ${__src}
 echo
 echo "info: jsdoc start."
 ${__jsdoc} -c ${__script_dir}/.jsdoc3.json -d ${__script_dir}/docs -p -r -l ${__src}
-# TODO: skip
-#[ $? -ne 0 ] && echo "jsdoc2 running error." && exit 1
+[ $? -ne 0 ] && echo "jsdoc running error." && exit 1
 
-VERSION=`cat ${__script_dir}/package.json | grep version | cut -c 17-21`
+#VERSION=`cat ${__script_dir}/package.json | grep version | cut -c 17-21`
+VERSION=`node -e 'console.log(require("./bucks").VERSION)'`
 
 echo
 echo "info: uglify start."
