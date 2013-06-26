@@ -19,6 +19,11 @@ __min="${__script_dir}/bucks.min.js"
 [ ! -f ${__hint} ] && echo "error: jshint command not found. please $ npm install ." && exit 1
 
 #
+# set version
+#
+./setver
+
+#
 # jshint
 #
 echo
