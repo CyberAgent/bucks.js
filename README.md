@@ -230,6 +230,28 @@ b.parallel([
 ```
 
 
+## onError
+
+`onError` Function to handle exceptions that have not been processed
+
+```javascript
+var onError = function (e, bucks) {
+    console.log("Custom onError");
+};
+
+// Bucks.onError!!
+Bucks.onError(onError);
+var b0 = new Bucks();
+b0
+    .add(function(err, next) {
+        throw new Error('b0');
+    })
+    .end()
+;
+
+```
+
+
 # AUTHORS
 
 ## Kei FUNAGAYAMA
