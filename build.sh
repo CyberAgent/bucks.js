@@ -52,7 +52,7 @@ echo " * @overview Async chain utility for browser and node.js" >> ${__min}
 echo " */" >> ${__min}
 
 
-${__uglify} ${__src} >> ${__min}
+${__uglify} ${__src} -m -c unused=false >> ${__min}
 [ $? -ne 0 ] && echo "error: uglify running error." && exit 1
 
 echo "info: output -> ${__min}"

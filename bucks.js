@@ -72,7 +72,7 @@
      * @memberof Bucks
      * @static
      */
-    Bucks.VERSION = '0.6.10';
+    Bucks.VERSION = '0.6.11';
 
     /**
      * if set `true`, uncaught errors are logged

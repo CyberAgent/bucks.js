@@ -1,5 +1,8 @@
 Changelog
 
+* Tue Aug 13 2013 Kei FUNAGAYAMA <funagayama_kei@cyberagent.co.jp> - 0.6.11
+ - Change: uglify-js change build option.
+
 * Tue Jun 25 2013 Kei FUNAGAYAMA <funagayama_kei@cyberagent.co.jp> - 0.6.10
  - Add: Bucks.VERSION 
  - Add: onError support
