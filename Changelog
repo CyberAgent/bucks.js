@@ -1,5 +1,8 @@
 Changelog
 
+* Mon Aug 19 2013 Kei FUNAGAYAMA <funagayama_kei@cyberagent.co.jp> - 0.6.12
+ - Update: destroy() to prevent double execution.
+
 * Tue Aug 13 2013 Kei FUNAGAYAMA <funagayama_kei@cyberagent.co.jp> - 0.6.11
  - Change: uglify-js change build option.
 

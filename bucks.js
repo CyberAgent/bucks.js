@@ -72,7 +72,7 @@
      * @memberof Bucks
      * @static
      */
-    Bucks.VERSION = '0.6.11';
+    Bucks.VERSION = '0.6.12';
 
     /**
      * if set `true`, uncaught errors are logged
@@ -482,6 +482,9 @@
          * @return {Bucks}
          */
         destroy: function destroy(err) {
+            if (!this._alive) {
+                return this;
+            }
             var ress = this._results;
             var callback = this.callback;
             var failure  = this.failure;
