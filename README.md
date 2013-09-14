@@ -115,6 +115,17 @@ b.then(function start() {
 }).end();
 ```
 
+## delay
+
+`delay` add delay execution
+
+```javascript
+b = new Bucks();
+b.add(function (){ /** program */ })
+.delay(1 * 1000) // 1ms
+.add(function() { /** program */})
+.end();
+```
 
 ## error
 
