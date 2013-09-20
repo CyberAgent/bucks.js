@@ -1,5 +1,9 @@
 Changelog
 
+* Fri Sep 20 2013 Kei FUNAGAYAMA <funagayama_kei@cyberagent.co.jp> - 0.8.1
+ - Add: Support in the browser, the test run. ($ open spec/all.html)
+ - Add: Add the dispose function.
+
 * Mon Aug 19 2013 Kei FUNAGAYAMA <funagayama_kei@cyberagent.co.jp> - 0.6.12
  - Update: destroy() to prevent double execution.
 

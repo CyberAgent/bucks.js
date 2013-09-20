@@ -1,9 +1,10 @@
 (function(global) {
 
-    var Bucks = require('../bucks');
-
-    var should = require('should');
-
+    if (typeof module !== 'undefined' && module.exports) { //node only code
+        Bucks = require('../bucks');
+        chai = require('chai');
+        should = chai.Should();
+    }
 
     describe('uncaught error', function() {
         it('should throw error when error in task if no end callback exists', function() {

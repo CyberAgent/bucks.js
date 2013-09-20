@@ -1,6 +1,6 @@
 {
     "name": "bucks",
-    "version": "0.6.12",
+    "version": "0.8.1",
     "description": "Async utilities for node and the browser. (amd support) ",
     "keywords": [
         "browser",
@@ -33,6 +33,7 @@
     },
     "devDependencies": {
         "mocha": ">=1.0.1",
+        "chai": ">=1.8.0",
         "should": ">=0.6.1",
         "jshint": ">=0.7.0",
         "jsdoc": "git://github.com/jsdoc3/jsdoc.git"

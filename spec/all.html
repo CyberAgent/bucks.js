@@ -1,0 +1,36 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+</head>
+<body>
+  <div id="mocha"></div>
+  <script src="../bucks.js"></script>
+  <script src="../node_modules/mocha/mocha.js"></script>
+  <script src="../node_modules/chai/chai.js"></script>
+
+  <script>
+    mocha.setup('bdd')
+    window.assert = chai.assert;
+    window.should = chai.should();
+    window.expect = chai.expect;
+  </script>
+
+  <script src="../test/index.js"></script>
+  <script src="../test/delay.js"></script>
+  <script src="../test/dispose.js"></script>
+  <script src="../test/endcallback.js"></script>
+  <script src="../test/error.js"></script>
+  <script src="../test/onError.js"></script>
+  <script src="../test/parallel.js"></script>
+  <script src="../test/running.js"></script>
+  <script src="../test/then.js"></script>
+  <script src="../test/thenerror.js"></script>
+  <script src="../test/uncaught.js"></script>
+  <script>
+    mocha.checkLeaks();
+    mocha.run();
+  </script>
+</body>
+</html>

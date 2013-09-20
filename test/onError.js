@@ -1,7 +1,10 @@
 (function (global) {
 
-    var Bucks = require('../bucks');
-    var should = require('should');
+    if (typeof module !== 'undefined' && module.exports) { //node only code
+        Bucks = require('../bucks');
+        chai = require('chai');
+        should = chai.Should();
+    }
 
     var onError = function (e, bucks) {
         Bucks._onError.should.be.ok;
@@ -138,6 +141,17 @@
             }
             Bucks.DEBUG = false;
 
+        });
+
+        it('logs error when DEBUG is true, the dispose throw', function() {
+            var b = new Bucks();
+            b.add(function f1() {
+                return 'a';
+            }).add(function f2(err, res) {
+                res.should.equal('a');
+            }).end(null, null, function () {
+                throw new Error('error');
+            });
         });
 
         after(function() {

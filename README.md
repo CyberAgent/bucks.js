@@ -262,6 +262,23 @@ b0
 
 ```
 
+## dispose
+
+```javascript
+var b0 = new Bucks();
+b0
+    .add(function(err, next) {
+        b0.dummy = "dummy";
+        next();
+    })
+    .end(null, null, function dispose () {
+        delete b0.dummy;
+    })
+;
+
+```
+
+
 
 # AUTHORS
 

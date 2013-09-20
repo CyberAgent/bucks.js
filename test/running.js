@@ -1,8 +1,10 @@
 (function (global) {
 
-    var Bucks = require('../bucks');
-
-    var should = require('should');
+    if (typeof module !== 'undefined' && module.exports) { //node only code
+        Bucks = require('../bucks');
+        chai = require('chai');
+        should = chai.Should();
+    }
 
     describe('check running', function(done) {
 
