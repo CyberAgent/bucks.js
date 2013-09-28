@@ -1,6 +1,6 @@
 {
     "name": "bucks",
-    "version": "0.8.1",
+    "version": "0.8.2",
     "description": "Async utilities for node and the browser. (amd support) ",
     "keywords": [
         "browser",

@@ -9,31 +9,46 @@
     describe('#add #end #parallel #dispose', function() {
         it('Run the dispose', function() {
             var b = new Bucks();
+
+            b.dispose = function () {
+                delete b.adummy;
+                (!!b.adummy).should.not.be.ok;
+            };
+
             b.add(function f1() {
                 b.adummy = "aaaa"; // b member variable!!
                 return 'a';
             }).add(function f2(err, res) {
                 res.should.equal('a');
-            }).end(null, null, function () {
-                delete b.adummy;
-                (!!b.adummy).should.not.be.ok
-            });
+            }).end(null, null);
         });
 
         it('Run the dispose with end', function() {
             var b = new Bucks();
+
+            b.dispose = function () {
+                delete b.adummy;
+                (!!b.adummy).should.not.be.ok;
+            };
+
             b.add(function f1() {
                 return 'a';
             }).end(function last(err, ress) {
                 b.adummy = "aaaa"; // b member variable!!
                 ress[0].should.equal('a');
-            }, null, function () {
-                delete b.adummy;
-                (!!b.adummy).should.not.be.ok
-            });
+            }, null);
         });
         it('Run the dispose with parallel/add/end', function(done) {
             var b = new Bucks();
+
+            b.dispose = function () {
+                delete b.pdummy;
+                delete b.adummy;
+                (!!b.pdummy).should.not.be.ok;
+                (!!b.adummy).should.not.be.ok;
+                done();
+            };
+
             b.parallel([
                 function task1(err, res) {
                     b.pdummy = "dummy"; // b member variable!!
@@ -69,13 +84,7 @@
                 return next();
             }).end(function last(err, res) {
                 res.length.should.eq(2).be.ok;
-            }, null, function () {
-                delete b.pdummy;
-                delete b.adummy;
-                (!!b.pdummy).should.not.be.ok;
-                (!!b.adummy).should.not.be.ok;
-                done();
-            });
+            }, null);
         });
         //
     });

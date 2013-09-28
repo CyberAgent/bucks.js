@@ -1,5 +1,9 @@
 Changelog
 
+* Sat Sep 28 Kei FUNAGAYAMA <funagayama_kei@cyberagent.co.jp> - 0.8.2
+ - Change: The definition method and execution timing of "dispose()" are changed.
+ - Add: The default delay millimeter second of "delay()" is set as 0.
+
 * Fri Sep 20 2013 Kei FUNAGAYAMA <funagayama_kei@cyberagent.co.jp> - 0.8.1
  - Add: Support in the browser, the test run. ($ open spec/all.html)
  - Add: Add the dispose function.
@@ -11,7 +15,7 @@ Changelog
  - Change: uglify-js change build option.
 
 * Tue Jun 25 2013 Kei FUNAGAYAMA <funagayama_kei@cyberagent.co.jp> - 0.6.10
- - Add: Bucks.VERSION 
+ - Add: Bucks.VERSION
  - Add: onError support
  - Add: forced jshint and jsdoc
 

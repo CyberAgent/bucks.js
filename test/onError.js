@@ -145,13 +145,16 @@
 
         it('logs error when DEBUG is true, the dispose throw', function() {
             var b = new Bucks();
+
+            b.dispose = function () {
+                throw new Error('error');
+            };
+
             b.add(function f1() {
                 return 'a';
             }).add(function f2(err, res) {
                 res.should.equal('a');
-            }).end(null, null, function () {
-                throw new Error('error');
-            });
+            }).end(null, null);
         });
 
         after(function() {

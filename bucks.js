@@ -61,7 +61,6 @@
         this._results = [];
         this.callback = none;
         this.failure  = none;
-        this.dispose = none;
         this._alive = true;
         this.__id = uid();
         Bucks.living[this.__id] = this;
@@ -73,7 +72,7 @@
      * @memberof Bucks
      * @static
      */
-    Bucks.VERSION = '0.8.1';
+    Bucks.VERSION = '0.8.2';
 
     /**
      * if set `true`, uncaught errors are logged
@@ -450,16 +449,28 @@
          * msミリ秒だけ次の処理を遅延させます
          * @memberof Bucks
          * @instance
-         * @param {int} ms 遅延させる時間[ms]
+         * @param {int} ms 遅延させる時間[ms] default) 0
          * @return {Bucks}
          */
         delay: function delay(ms) {
             return this.add(function (err, res, next) {
                 setTimeout(function () {
                     next(err, res);
-                }, ms); // @TODO : default set ms. example) ms || 2 * 1000;
+                }, ms || 0);
             });
         },
+
+
+        /**
+         * OVERRIDE ME.
+         * チェイン破棄時に行いたい処理があれば
+         * オーバーライドしてください
+         * @method
+         * @memberof Bucks
+         * @instance
+         */
+        dispose: none,
+
 
         /**
          * このオブジェクトを破棄して
@@ -485,6 +496,9 @@
             this.callback = none;
             this.failure = none;
             this.dispose = none;
+
+            // @TODO: Change where to run to finally.
+            //dispose.call(this); // run the "dispose()"
 
             ress.shift(); // remove null-result created on first iterate
 
@@ -522,18 +536,17 @@
 
                 }
             } finally {
-                // Dispose of the instance.
-                if (dispose) {
-                    try {
-                        dispose.call(null);
-                    } catch (ex1) {
-                        if (Bucks._isOnError) {
-                            Bucks._onError(ex1, this);
-                        } else {
-                            throw ex1;
-                        }
+
+                try {
+                    dispose.call(this); // run the "dispose()"
+                } catch (ex1) {
+                    if (Bucks._isOnError) {
+                        Bucks._onError(ex1, this);
+                    } else {
+                        throw ex1;
                     }
                 }
+
 
                 delete this._alive;
                 delete Bucks.running[this.__id];
@@ -548,11 +561,10 @@
          * チェインを完了し実行を開始します
          * @memberof Bucks
          * @instance
-         * @param {function callback(err, res)} [callback] 最終コールバック関数
-         * ressは各チェインの実行結果の配列
+         * @param {function callback(err, res)} [callback] 最終コールバック関数 ressは各チェインの実行結果の配列
          * @param {function errback(err)} [errback] callbackでエラーが発生した場合のハンドラ
          */
-        end: function end(callback, errback, dispose) {
+        end: function end(callback, errback) {
             if (callback && callback.length < 1) {
                 // if callback specified, it should be `callback(err, ress)`.
                 // errが無視されると発生したエラーがどこにも出ずにデバッグが難しくなるので
@@ -564,7 +576,6 @@
 
             this.callback = callback;
             this.failure  = errback;
-            this.dispose = dispose;
 
             if (!this._tasks || !this._tasks.length) {
                 var err = new Error('task is empty. add(task) first. if theres no task to execute but end is desired, empty() may be useful');

@@ -266,14 +266,17 @@ b0
 
 ```javascript
 var b0 = new Bucks();
+
+b0.dispose = function dispose () {
+    delete b0.dummy;
+}
+
 b0
     .add(function(err, next) {
         b0.dummy = "dummy";
         next();
     })
-    .end(null, null, function dispose () {
-        delete b0.dummy;
-    })
+    .end(null, null)
 ;
 
 ```
