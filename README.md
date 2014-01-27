@@ -313,3 +313,7 @@ CyberAgent, Inc. All rights reserved.
 # License
 
 MIT @see https://github.com/CyberAgent/bucks.js/blob/master/LICENSE
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/CyberAgent/bucks.js/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
