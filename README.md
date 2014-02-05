@@ -281,6 +281,13 @@ b0
 
 ```
 
+## DEBUG
+
+The output debug log
+
+```
+Bucks.DEBUG = true;
+```
 
 
 # AUTHORS
