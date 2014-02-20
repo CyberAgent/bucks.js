@@ -13,13 +13,19 @@
   ],
   "ignore": [
     "**/.*",
-    "Gruntfile.js",
+    "AUTHORS",
+    "Changelog",
     "LICENSE",
+    "Makefile",
     "README.md",
     "bower.json",
+    "build.sh",
+    "component.json",
     "node_modules",
     "package.json",
-    "spec"
+    "setver",
+    "spec",
+    "test"
   ],
   "repository": {
     "type": "git",
