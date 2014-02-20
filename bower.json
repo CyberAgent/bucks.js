@@ -1,0 +1,36 @@
+{
+  "name": "bucks.js",
+  "version": "0.8.2",
+  "keywords": [
+    "browser",
+    "node",
+    "async"
+  ],
+  "readmeFilename": "README.md",
+  "main": [
+    "bucks.js",
+    "bucks.min.js"
+  ],
+  "ignore": [
+    "**/.*",
+    "Gruntfile.js",
+    "LICENSE",
+    "README.md",
+    "bower.json",
+    "node_modules",
+    "package.json",
+    "spec"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CyberAgent/bucks.js.git"
+  },
+  "homepage": "https://github.com/CyberAgent/bucks.js.git",
+  "authors": [
+    "CyberAgent, Inc <npm@cyberagent.co.jp>",
+    "Kazuma Mishimagi <mishimagi_kazuma@cyberagnet.co.jp>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+  }
+}
