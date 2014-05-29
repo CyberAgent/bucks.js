@@ -1,5 +1,11 @@
 Changelog
 
+* Thu May 29 Kei FUNAGAYAMA <funagayama_kei@cyberagent.co.jp> - 0.8.3
+ - Update: jsdoc update
+ - Added: add bower support
+ - Added: add component support
+ - Update README.md
+
 * Sat Sep 28 Kei FUNAGAYAMA <funagayama_kei@cyberagent.co.jp> - 0.8.2
  - Change: The definition method and execution timing of "dispose()" are changed.
  - Add: The default delay millimeter second of "delay()" is set as 0.
