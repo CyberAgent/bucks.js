@@ -36,7 +36,8 @@
         "chai": ">=1.8.0",
         "should": ">=0.6.1",
         "jshint": ">=0.7.0",
-        "jsdoc": "git://github.com/jsdoc3/jsdoc.git"
+        "jsdoc": "git://github.com/jsdoc3/jsdoc.git",
+        "ink-docstrap": "~0.3.0-0"
     },
     "engines": {
         "node": ">=0.8.0",

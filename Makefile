@@ -5,7 +5,7 @@
 PROJECTNAME="bucks.js"
 DESC="bucks.js"
 
-all: clean test build
+all: clean test build jsdoc
 
 check:
 	@echo
@@ -22,9 +22,14 @@ build:
 	@echo "info: build start."
 	./build.sh
 
+jsdoc:
+	@echo
+	@echo "info: jsdoc create"
+	./node_modules/.bin/jsdoc -c .jsdoc3.json -d docs -p -r -l -t node_modules/ink-docstrap/template bucks.js
 clean:
 	@echo
 	@echo "info: clean start."
 	rm -f bucks.min.js
+	rm -rf docs
 
 .PHONY: all test build clean

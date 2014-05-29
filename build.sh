@@ -11,7 +11,6 @@ popd >/dev/null 2>&1
 
 __uglify="${__script_dir}/node_modules/uglify-js/bin/uglifyjs"
 __hint="${__script_dir}/node_modules/jshint/bin/jshint"
-__jsdoc="${__script_dir}/node_modules/jsdoc/jsdoc"
 __src="${__script_dir}/bucks.js"
 __min="${__script_dir}/bucks.min.js"
 
@@ -30,14 +29,6 @@ echo
 echo "info: jshint start."
 ${__hint} ${__src}
 [ $? -ne 0 ] && echo "jshint running error." && exit 1
-
-#
-# jsdoc3
-#
-echo
-echo "info: jsdoc start."
-${__jsdoc} -c ${__script_dir}/.jsdoc3.json -d ${__script_dir}/docs -p -r -l ${__src}
-[ $? -ne 0 ] && echo "jsdoc running error." && exit 1
 
 #VERSION=`cat ${__script_dir}/package.json | grep version | cut -c 17-21`
 VERSION=`node -e 'console.log(require("./bucks").VERSION)'`
