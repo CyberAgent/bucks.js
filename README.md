@@ -170,7 +170,7 @@ try {
     var b = new Bucks();
     b.then(function () {
         throw new Error('error');
-    ).end();
+    }).end();
 } catch(e) {
     // e => 'error'
 }
@@ -185,7 +185,7 @@ try {
 var t1 = function t1(err, res) {
     return 't1';
 };
-var t2 = funciton t2(err, res) {
+var t2 = function t2(err, res) {
     return 't2';
 };
 
