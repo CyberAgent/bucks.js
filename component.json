@@ -1,22 +1,22 @@
 {
-  "name": "bucks.js",
-  "repo": "CyberAgent/bucks.js",
-  "description": "Async chain utility for node and the browser. (amd support)",
-  "version": "0.8.2",
-  "keywords": [
-    "browser",
-    "node",
-    "async"
-  ],
-  "dependencies": {},
-  "development": {},
-  "license": "MIT",
-  "main": [
-    "bucks.js",
-    "bucks.min.js"
-  ],
-  "scripts": [
-    "bucks.js",
-    "bucks.min.js"
-  ]
+    "name": "bucks.js",
+    "repo": "CyberAgent/bucks.js",
+    "description": "Async chain utility for node and the browser. (amd support)",
+    "version": "0.8.4",
+    "keywords": [
+        "browser",
+        "node",
+        "async"
+    ],
+    "dependencies": {},
+    "development": {},
+    "license": "MIT",
+    "main": [
+        "bucks.js",
+        "bucks.min.js"
+    ],
+    "scripts": [
+        "bucks.js",
+        "bucks.min.js"
+    ]
 }
