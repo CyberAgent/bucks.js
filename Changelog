@@ -1,5 +1,10 @@
 Changelog
 
+* Tue May 12 2015 HIRAKI Satoru <hiraki_satoru@cyberagent.co.jp> - 0.8.4
+
+ - Added: add interrupt function
+ - Update: README.md
+
 * Thu May 29 Kei FUNAGAYAMA <funagayama_kei@cyberagent.co.jp> - 0.8.3
  - Update: jsdoc update
  - Added: add bower support
