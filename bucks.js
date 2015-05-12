@@ -580,10 +580,10 @@
          */
         end: function end(callback, errback) {
             if (callback && callback.length < 1) {
-                // if callback specified, it should be `callback(err, res)`.
+                // if callback specified, it should be `callback(err, ress)`.
                 // errが無視されると発生したエラーがどこにも出ずにデバッグが難しくなるので
                 // callbackには引数を1つ以上指定することを強制しています
-                throw new Error('callback args length invalid. should be `callback(err, res)` or `callback(err)`.');
+                throw new Error('callback args length invalid. should be `callback(err, ress)` or `callback(err)`.');
             }
 
             var self = this;
