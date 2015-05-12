@@ -3,7 +3,9 @@
 var fs = require('fs');
 
 var list = [
-    './package.json'
+    './package.json',
+    './bower.json',
+    './component.json'
 ];
 
 var VERSION = require('./bucks').VERSION;
